@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Tech-Newz",
+    "slug": "Tech-Newz",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.jpg",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "https://st3.depositphotos.com/26913234/32605/v/450/depositphotos_326054804-stock-illustration-creative-modern-letter-news-clock.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "white",
+      "flex":1
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.kameshkabil.TechNewz"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5653e156-6d1e-4017-bbe4-f87d7a1d6da9"
+      }
+    }
+  }
+}
