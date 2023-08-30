@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import * as WebBrowser from 'expo-web-browser';
-import { View, Text, StyleSheet, SafeAreaView, Image, ActivityIndicator, Pressable, Modal, Button } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, Image, ActivityIndicator, Pressable, Modal, Button, ScrollView } from 'react-native'
 function Article(props) {
 
     const [isModelVisible, setIsModelVisible] = useState(false)
@@ -30,6 +30,7 @@ function Article(props) {
                 </View>
             </Pressable>
 
+            <ScrollView>
             <Modal visible={isModelVisible} onRequestClose={() => {
                 setIsModelVisible(false)
             }}>
@@ -47,7 +48,7 @@ function Article(props) {
                 <View style={{ padding: 20 }}>
                     {(props.title == null) ? <ActivityIndicator size='large' color='red' /> : <Text style={styles.bigTitle}>{props.title}</Text>}
 
-                    {(props.description == null) ? <ActivityIndicator size='large' color='red' /> : <Text style={styles.bigDescription} numberOfLines={3}>{props.description}</Text>}
+                    {(props.description == null) ? <ActivityIndicator size='large' color='red' /> : <Text style={styles.bigDescription} numberOfLines={5}>{props.description}</Text>}
 
                     <View style={styles.data}>
                         <Text style={styles.heading}>by: {(props.author == null) ? <ActivityIndicator size='small' color='red' /> : <Text style={styles.bigAuthor}>{props.author}</Text>}</Text>
@@ -59,6 +60,7 @@ function Article(props) {
                     </View>
                 </View>
             </Modal>
+            </ScrollView>
 
 
         </View>
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
         marginTop: 30
     },
     image: {
-        height: 200,
+        height: 250,
         width: '100%',
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
     BigScreenimage: {
 
         width: '100%',
-        height: 400,
+        height: 450,
         alignSelf: 'center'
     },
     bigTitle: {
@@ -132,6 +134,7 @@ const styles = StyleSheet.create({
     bigDescription: {
         marginTop: 10,
         fontSize: 18,
+
         fontWeight: '400'
     },
     bigAuthor: {
